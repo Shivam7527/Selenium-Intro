@@ -1,11 +1,13 @@
 package selenium.org.sshukla79;
 
 import java.time.Duration;
+import java.util.Arrays;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class IRCTC {
@@ -14,12 +16,17 @@ public class IRCTC {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver", "C:/Users/shiva/OneDrive/Documents/chromedriver.exe");
 
-		WebDriver driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		WebDriver driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
+		
 		
 driver.get("https://www.irctc.co.in/nget/train-search");
 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 driver.findElement(By.cssSelector("a[aria-label$='Click here to Login in application']")).click();
+
+options.setExperimentalOption("excludeSwitches",
+	     Arrays.asList("disable-popup-blocking"));
 //driver.switchTo().alert().accept();
 
 WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));

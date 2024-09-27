@@ -22,6 +22,7 @@ public class Assignment {
 	String parentId=it.next();
 	String childId=it.next();
 	driver.switchTo().window(childId);
+	
 	//String subId=it.next();
 	Thread.sleep(3000);
 	String text=driver.findElement(By.cssSelector("div[class='example'] h3")).getText();

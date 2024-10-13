@@ -25,6 +25,7 @@ public class StepDefinitionImpl extends BaseTest{
 	public void I_landed_on_Ecommerce_Page() throws IOException
 	{
 		//landing page
+		//
 		landingPage = launchApplication();
 		//code
 	}
